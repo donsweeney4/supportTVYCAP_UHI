@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>App Support</title>
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
@@ -30,17 +29,14 @@
 
 <div class="container bg-white shadow-xl rounded-2xl p-8 sm:p-12 space-y-8">
     
-    <!-- Header Section -->
     <div class="text-center">
-        <h1 class="text-4xl font-bold text-gray-800 mb-2">App Support</h1>
-        <p class="text-lg text-gray-500">How can we help you today?</p>
+        <h1 class="text-4xl font-bold text-gray-800 mb-2">TVYCAP_UHI App Support</h1>
+        <p class="text-lg text-gray-500">How can we help you ?</p>
     </div>
 
-    <!-- FAQ Section -->
     <section>
         <h2 class="text-2xl font-semibold text-gray-700 mb-4">Frequently Asked Questions</h2>
         <div class="space-y-4">
-            <!-- FAQ Item 1 -->
             <div class="bg-gray-50 rounded-lg p-4 cursor-pointer" onclick="toggleAccordion('faq1')">
                 <div class="flex justify-between items-center">
                     <h3 class="font-medium text-gray-800">What are the app's key features?</h3>
@@ -49,11 +45,10 @@
                     </svg>
                 </div>
                 <div id="faq1" class="accordion-content text-gray-600 mt-2">
-                    <p>Our app helps you to [App Purpose], with key features including [Feature 1], [Feature 2], and [Feature 3].</p>
+                    <p>Our app helps you to collect temperature and humidity data, with key features including pairing with a remote temperature sensor, real-time temperature monitoring, and data sharing.</p>
                 </div>
             </div>
 
-            <!-- FAQ Item 2 -->
             <div class="bg-gray-50 rounded-lg p-4 cursor-pointer" onclick="toggleAccordion('faq2')">
                 <div class="flex justify-between items-center">
                     <h3 class="font-medium text-gray-800">Is my data secure?</h3>
@@ -66,29 +61,15 @@
                 </div>
             </div>
 
-            <!-- Add more FAQ items here as needed -->
-        </div>
+            </div>
     </section>
 
-    <!-- Contact Form Section -->
-    <section>
-        <h2 class="text-2xl font-semibold text-gray-700 mb-4">Contact Us</h2>
-        <form id="contact-form" class="space-y-4">
-            <div>
-                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
-                <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent transition">
-            </div>
-            <div>
-                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Your Email</label>
-                <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent transition">
-            </div>
-            <div>
-                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your Message</label>
-                <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"></textarea>
-            </div>
-            <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-3 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition">Send Message</button>
-        </form>
-        <div id="message-status" class="mt-4 text-center text-sm font-medium hidden"></div>
+    <section class="text-center">
+        <h2 class="text-2xl font-semibold text-gray-700 mb-4">Still need help?</h2>
+        <p class="text-gray-600 mb-4">If your question isn't answered in the FAQs, please contact us directly.</p>
+        <a href="mailto:uhi.help@gmail.com" class="inline-block bg-blue-600 text-white font-semibold py-3 px-6 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition">
+            Email Our Support Team
+        </a>
     </section>
 
 </div>
@@ -100,25 +81,6 @@
         content.classList.toggle('active');
         arrow.classList.toggle('rotate-180');
     }
-
-    // Handle form submission
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const status = document.getElementById('message-status');
-        
-        // In a real application, you would send this data to a backend service.
-        // For a static GitHub Pages site, this form will simply show a success message.
-        
-        status.textContent = 'Thank you for your message! We will get back to you soon.';
-        status.classList.remove('hidden', 'text-red-500');
-        status.classList.add('text-green-600');
-        
-        // Reset the form after a short delay
-        setTimeout(() => {
-            document.getElementById('contact-form').reset();
-            status.classList.add('hidden');
-        }, 3000);
-    });
 </script>
 
 </body>
